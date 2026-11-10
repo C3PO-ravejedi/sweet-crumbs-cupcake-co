@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAME - Cupcake Delight</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-1: #ffb3ba; /* light pink */
+      --color-2: #ffdfba; /* peach */
+      --color-3: #baffc9; /* mint */
+      --color-4: #bae1ff; /* light blue */
+      --font-display: 'Pacifico', cursive;
+      --font-body: 'Open Sans', sans-serif;
+    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {font-family: var(--font-body); line-height: 1.6; background: var(--color-4); color:#333;}
+    header {background: var(--color-1); padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center;}
+    header h1 {font-family: var(--font-display); font-size: clamp(1.5rem,4vw,3rem); margin:0;}
+    nav a {margin-left:1rem; text-decoration:none; color:#333; font-weight:600;}
+    nav a:hover {text-decoration:underline;}
+    .hero {display:grid; grid-template-columns:1fr 1fr; align-items:center; padding:3rem 2rem; background: var(--color-2);}
+    .hero .text {max-width:600px;}
+    .hero h2 {font-family: var(--font-display); font-size: clamp(2rem,6vw,4rem); margin-bottom:0.5rem;}
+    .hero p {font-size:1.2rem; margin-bottom:1rem;}
+    .hero button {background: var(--color-3); border:none; padding:0.8rem 1.5rem; font-size:1rem; cursor:pointer; border-radius:4px;}
+    .hero button:hover {background: var(--color-1);}
+    .hero svg {width:100%; max-width:300px;}
+    .facts {display:flex; justify-content:space-around; background: var(--color-3); padding:1rem 0;}
+    .facts div {text-align:center; max-width:200px;}
+    section {padding:2rem; background:#fff; margin:1rem 0;}
+    #offer h3, #contact h3, #story h3 {font-family: var(--font-display); font-size:2rem; margin-bottom:1rem;}
+    .menu-item {display:flex; align-items:center; margin-bottom:0.8rem;}
+    .menu-item svg {width:24px; height:24px; margin-right:0.5rem; fill:var(--color-1);}
+    .menu-item span {flex:1;}
+    .menu-item .price {font-weight:600;}
+    .menu-item .tag {background: var(--color-2); padding:0.2rem 0.5rem; border-radius:3px; margin-left:0.5rem; font-size:0.8rem;}
+    .review {margin-top:1rem; font-style:italic;}
+    form {display:grid; gap:0.5rem; max-width:400px;}
+    input, textarea {padding:0.5rem; border:1px solid #ccc; border-radius:4px; font-family:var(--font-body);}
+    button.submit {background: var(--color-1); color:#fff; border:none; padding:0.7rem; cursor:pointer;}
+    button.submit:hover {background: var(--color-3);}
+    @media (max-width:600px) {.hero {grid-template-columns:1fr; text-align:center;} header {flex-direction:column;} nav {margin-top:0.5rem;}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NAME</h1>
+    <nav><a href="#offer">Menu</a> <a href="#contact">Order</a> <a href="#story">Our Story</a></nav>
+  </header>
+  <section class="hero">
+    <div class="text"><h2>Freshly Baked Happiness in Every Bite</h2>
+      <p>At NAME we craft artisanal cupcakes with premium ingredients, dreamy frosting, and a sprinkle of love.</p>
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Order Your Sweetness</button>
+    </div>
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="var(--color-1)"/><stop offset="100%" stop-color="var(--color-2)"/></linearGradient></defs>
+      <path d="M100 20c-30 0-55 25-55 55 0 20 15 45 55 100 40-55 55-80 55-100 0-30-25-55-55-55z" fill="url(#grad)" stroke="var(--color-3)" stroke-width="4"/>
+      <circle cx="100" cy="75" r="25" fill="var(--color-4)"/>
+      <text x="100" y="80" text-anchor="middle" font-family="var(--font-display)" font-size="20" fill="#333">🍰</text>
+    </svg>
+  </section>
+  <section class="facts"><div><strong>100+</strong><br/>Flavors</div><div><strong>5 min</strong><br/>Prep Time</div><div><strong>Locally sourced</strong><br/>Ingredients</div></section>
+  <section id="offer"><h3>Our Cupcake Menu</h3>
+    <div class="menu-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg><span>Vanilla Dream</span><span class="price">$3.50</span><span class="tag">Classic</span></div>
+    <div class="menu-item"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16"/></svg><span>Chocolate Indulgence</span><span class="price">$3.75</span><span class="tag">Rich</span></div>
+    <div class="menu-item"><svg viewBox="0 0 24 24"><polygon points="12,2 22,22 2,22"/></svg><span>Red Velvet Bliss</span><span class="price">$4.00</span><span class="tag">Velvet</span></div>
+    <div class="menu-item"><svg viewBox="0 0 24 24"><path d="M2 12 L22 12"/></svg><span>Lemon Zest</span><span class="price">$3.60</span><span class="tag">Citrus</span></div>
+    <div class="menu-item"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="5"/></svg><span>Caramel Drizzle</span><span class="price">$4.20</span><span class="tag">Decadent</span></div>
+    <div class="menu-item"><svg viewBox="0 0 24 24"><line x1="2" y1="2" x2="22" y2="22"/></svg><span>Seasonal Surprise</span><span class="price">$4.50</span><span class="tag">Special</span></div>
+    <p class="review">"Best cupcakes in town – the frosting is cloud‑soft!" – Maya K.</p>
+    <p class="review">"I love the seasonal surprise, always a delightful twist." – Alex P.</p>
+    <p class="review">"Perfect for birthdays, my kids can’t get enough." – Jordan L.</p>
+  </section>
+  <section id="story"><h3>Our Story</h3>
+    <p>Founded in 2024 by a group of pastry enthusiasts, NAME began as a tiny kitchen in Brooklyn’s industrial district. The mission was simple: bring the joy of perfectly baked cupcakes to every neighborhood, using only the finest, locally‑sourced ingredients. Over the past two years we have grown from a weekend pop‑up to a beloved community staple, serving hundreds of customers daily.</p>
+    <p>Our bakers experiment with seasonal fruits, exotic spices, and sustainable packaging to keep the menu fresh and the planet happy. We partner with local farms for organic eggs, free‑range butter, and heirloom wheat flour. Every cupcake is hand‑decorated, ensuring each bite feels like a small celebration.</p>
+    <p>Beyond the bake shop, we host weekly cupcake‑making workshops, support local schools with fundraising events, and donate unsold treats to nearby shelters. Our commitment to community, quality, and creativity drives everything we do, and we can’t wait to share that passion with you.</p>
+    <p>Looking ahead, we plan to launch a subscription box, expand to neighboring boroughs, and introduce gluten‑free and vegan options without compromising flavor. Stay tuned for exciting new flavors and collaborations that will keep your taste buds dancing.</p>
+  </section>
+  <section id="contact"><h3>Order &amp; Contact</h3>
+    <p>Ready to treat yourself? Fill the form below and we’ll whisk your order to the kitchen.</p>
+    <form action="mailto:order@namecupcakes.com" method="post" enctype="text/plain">
+      <input type="text" name="Name" placeholder="Your Name" required />
+      <input type="email" name="Email" placeholder="Your Email" required />
+      <input type="text" name="Phone" placeholder="Phone (optional)" />
+      <textarea name="Message" placeholder="Cupcake selection, quantity, delivery details..." rows="4" required></textarea>
+      <button type="submit" class="submit">Send Order</button>
+    </form>
+    <p>Visit us: 123 Sweet St, Brooklyn, NY 11201<br/>Open: Mon‑Sat 8am‑8pm<br/>Phone: (555) 123‑4567</p>
+  </section>
+  <footer style="text-align:center; padding:1rem; background:var(--color-1); color:#fff;">© 2026 NAME Cupcakes. All rights reserved.</footer>
+</body>
+</html>
